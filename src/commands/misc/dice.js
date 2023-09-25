@@ -1,5 +1,4 @@
 require('dotenv').config();
-const { default: Description } = require('@dice-roller/rpg-dice-roller/types/Description');
 const {REST, Routes, ApplicationCommandOptionType, EmbedBuilder} = require('discord.js')
 
 module.exports = {
