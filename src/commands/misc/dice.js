@@ -31,13 +31,16 @@ module.exports = {
 
 
       const num1 = interaction.options.get('dice-sides').value;
-      const num3 = interaction.options.get('dice-numberof').value;
-      const num2 = interaction.options.get('dice-modifiers')?.value;
-        var rating = Math.floor(((Math.random() * num1 + 1) * num3) + num2);
+      //const num3 = interaction.options.get('dice-numberof').value;
+      //const num2 = interaction.options.get('dice-modifiers').value;
+
+      // Get first dice rolled
+        //var dice = Math.floor(((Math.random() * num1 + 1) * num3) + num2);
+
 
     const embed = new EmbedBuilder()
-        .setTitle(`Result: ${rating}!`)
-        .setDescription(`You roll some dice.`)
+        .setTitle(`Result: ${dice}!`)
+        .setDescription(`(${num1} * ${num3}) + ${num2}`)
         .setColor('Random')
 
       interaction.editReply({embeds: [embed]});
