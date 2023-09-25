@@ -116,9 +116,9 @@ client.on("ready", () => {
     }];
 
     setInterval(() => {
-      
+
     let random = Math.floor(Math.random() * status.length);
-    client.user.Activity(status[random]);
+    client.user.setActivity(status[random]);
   }, 10000);
 
  });
