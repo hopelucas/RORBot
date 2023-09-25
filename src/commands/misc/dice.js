@@ -1,4 +1,4 @@
-const DiceRoller = require('../node_modules/rpg-dice-roller/dice-roller.js');
+const DiceRoller = require('../node_modules/dice-roller/dice-roller.js');
 
 module.exports = {
 	name: 'roll',
