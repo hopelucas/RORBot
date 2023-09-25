@@ -29,7 +29,7 @@ module.exports = {
 },
 
 
- run: async ({ interaction }) => {
+    run: async ({ interaction }) => {
       await interaction.deferReply();
 
       const num1 = interaction.options.get('dice-sides').value;
