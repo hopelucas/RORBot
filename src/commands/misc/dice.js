@@ -2,7 +2,7 @@ require('dotenv').config();
 const {REST, Routes, ApplicationCommandOptionType, EmbedBuilder} = require('discord.js')
 
 module.exports = {
-    name: 'dice',
+    name: 'old',
     description: 'Rolls a dice!',
     options: [
         {
