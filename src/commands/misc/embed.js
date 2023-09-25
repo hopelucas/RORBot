@@ -58,8 +58,14 @@ module.exports = {
       Individual rolls: ${individualRolls}
       Modifier: ${modifier?.[0]}`);
 
-      interaction.editReply(`${total}`);
+      const embed = new EmbedBuilder()
+        .setTitle(`Result: ${total}!`)
+        .setDescription(`You rolled ${command} and got ${total}!
+        Individual rolls: ${individualRolls}
+        Modifier: ${modifier?.[0]}`)
+        .setColor('Random')
 
+      interaction.editReply({embeds: [embed]});
 
     },
   };
