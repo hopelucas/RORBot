@@ -1,29 +1,16 @@
 module.exports = {
-    name: 'rand',
-    description: "generates a random number",
-    execute(message, args, Discord) {
+    name: 'lettuce',
+    description: 'Replies with the bot ping!',
   
-      if (!args.length || !args[1]) {
-        message.channel.send("You need to type in the min and max values like this \`!rand 10 5\`")
-      }
+    callback: async (client, interaction) => {
+      await interaction.deferReply();
   
-      else {
+      const reply = await interaction.fetchReply();
   
-        let max = args[0]
-        let min = args[1]
+      const ping = reply.createdTimestamp - interaction.createdTimestamp;
   
-      let randNo = Math.round(Math.random() * max + min)
-  
-      const embed = new Discord.MessageEmbed()
-      .setTitle("Your random number is: ")
-      .setDescription(randNo)
-      .setColor("YELLOW")
-      .setFooter("Random Number Generator")
-      .setTimestamp()
-  
-      message.reply(embed)
-  
-      }
-  
-    }
-  }
+      interaction.editReply(
+        `AAAAA MY PENIS EXPLODE`
+      );
+    },
+  };
