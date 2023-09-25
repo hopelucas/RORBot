@@ -36,9 +36,23 @@ module.exports = {
         var rating = Math.floor((Math.random() * num1 + 1 + num2) * num3);
 
     const embed = new EmbedBuilder()
-        .setTitle('Embed Title')
-        .setDescription(`You rolled a ${rating} - Sides: ${num1}!, Number of Dice: ${num3}, Modifiers: ${num2}`)
-        
+        .setTitle(`Result: ${rating}`)
+        .setDescription(`Sides: ${num1}!, Number of Dice: ${num3}, Modifiers: ${num2}`)
+        .setColor('Random')
+        .addFields({
+            name: 'Field title',
+            value: 'Some random value',
+            inline: true,
+        }, {
+            name: '2nd Field title',
+            value: 'Some random value',
+            inline: true,
+        }, {
+            name: '3rd Field title',
+            value: 'Some random value',
+            inline: true,
+        },)
+
       interaction.editReply({embeds: [embed]});
 
     },
