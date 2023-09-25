@@ -2,12 +2,12 @@ require('dotenv').config();
 const {REST, Routes, ApplicationCommandOptionType} = require('discord.js')
 
 module.exports = {
-    name: 'lettuce',
-    description: 'Replies with the bot ping!',
+    name: 'Dice',
+    description: 'Rolls a dice!',
     options: [
         {
-        name: 'first-number',
-        description: `The first number`,
+        name: 'Dice Sides',
+        description: `The number of sides on your dice.`,
         type: ApplicationCommandOptionType.Number,
         required: true,
         },
@@ -16,10 +16,10 @@ module.exports = {
   
     callback: async (client, interaction) => {
       await interaction.deferReply();
-      const num1 = interaction.options.get('first-number').value;
+      const num1 = interaction.options.get('Dice Sides').value;
         var rating = Math.floor(Math.random() * num1 + 1);
       interaction.editReply(
-        `AAAAA MY PENIS EXPLODE ${rating} times!`
+        `You rolled a ${rating} - out of a possible ${num1}!`
       );
     },
   };
