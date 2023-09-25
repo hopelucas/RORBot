@@ -24,11 +24,12 @@ module.exports = {
           description: `How many dice should be rolled?`,
           type: ApplicationCommandOptionType.Number,
           required: false,
-      },
+      }
   ],
 },
 
-    run: async (client, interaction) => {
+
+ run: async ({ interaction }) => {
       await interaction.deferReply();
 
       const num1 = interaction.options.get('dice-sides').value;
@@ -69,5 +70,5 @@ module.exports = {
         .setColor('Random')
         
         interaction.editReply({embeds: [embed]});
-    },
-  };
+}
+};
