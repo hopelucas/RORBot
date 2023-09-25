@@ -1,17 +1,12 @@
-module.exports = {
-    name: 'random',
-    description: 'returns an aleatory number',
+var array = [1, 2, 3, 4, 5];
 
-    callback: async (client, interaction) => {
-        await interaction.deferReply();
-    
-        var rating = Math.floor(Math.random() * 100) + 1;
-    
-        const ping = reply.createdTimestamp - interaction.createdTimestamp;
-    
-        interaction.editReply(
-          `I rate you ${rating}/100`
-        );
-      },
-    };
+module.exports = {
+    name: 'roll',
+    description: 'Replies with the bot ping!',
+
+
+  get random_array_member() {
+    return array[Math.floor(Math.random()*array.length)]
+  }
+}
     
