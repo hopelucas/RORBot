@@ -16,9 +16,11 @@ const client = new Client({
 
 eventHandler(client);
 
-client.user.setActivity({
-  name: 'Bread',
-  type: ActivityType.Listening,
- });
+client.on("ready", () => {
+  client.user.setActivity({
+    name: 'Bread',
+    type: ActivityType.Listening,
+   })
+  });
 
 client.login(process.env.TOKEN);
