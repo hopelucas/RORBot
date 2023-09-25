@@ -1,7 +1,6 @@
 module.exports = {
     name: 'lettuce',
     description: 'Replies with the bot ping!',
-    type: ApplicationCommandOptionType.Number,
 
   
     callback: async (client, interaction) => {
