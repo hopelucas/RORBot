@@ -19,7 +19,7 @@ const client = new Client({
 
 eventHandler(client);
 
-client.on("ready", () => {
+/*client.on("ready", () => {
 
   let status = [{
     name: 'Sebastian eat sandwiches',
@@ -124,7 +124,7 @@ client.on("ready", () => {
     client.user.setActivity(status[random]);
   }, 100000);
 
- });
+ }); */
 
  new CommandKit({
     client,
