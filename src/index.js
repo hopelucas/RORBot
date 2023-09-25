@@ -1,16 +1,21 @@
-require('dotenv/config');
-const { Client, IntentsBitField } = require('discord.js');
+require('dotenv').config();
+const { Client, IntentsBitField, ActivityType } = require('discord.js');
+const eventHandler = require('./handlers/eventHandler');
 const { CommandKit } = require('commandkit');
 
+
 const client = new Client({
-    intents: [
-        IntentsBitField.Flags.Guilds,
-        IntentsBitField.Flags.GuildMembers,
-        IntentsBitField.Flags.GuildMessages,
-        IntentsBitField.Flags.MessageContent,
-    ],
+  intents: [
+    IntentsBitField.Flags.Guilds,
+    IntentsBitField.Flags.GuildMembers,
+    IntentsBitField.Flags.GuildMessages,
+    IntentsBitField.Flags.MessageContent,
+  ],
 });
 
+eventHandler(client);
+
+/*
 client.on("ready", () => {
 
   let status = [{
@@ -116,9 +121,9 @@ client.on("ready", () => {
     client.user.setActivity(status[random]);
   }, 100000);
 
- });
+ });*/
 
-new CommandKit({
+ new CommandKit({
     client,
     commandsPath: `${__dirname}/commands`,
     eventsPath: `${__dirname}/events`,
