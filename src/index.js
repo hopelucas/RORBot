@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { Client, IntentsBitField, ActivityType } = require('discord.js');
 const eventHandler = require('./handlers/eventHandler');
+const { CommandKit } = require('commandkit');
 
 
 const client = new Client({
@@ -11,6 +12,8 @@ const client = new Client({
     IntentsBitField.Flags.MessageContent,
   ],
 });
+
+
 
 
 
@@ -122,5 +125,11 @@ client.on("ready", () => {
   }, 100000);
 
  });
+
+ new CommandKit({
+    client,
+    commandsPath: `${__dirname}/commands`,
+    eventsPath: `${__dirname}/events`,
+});
 
 client.login(process.env.TOKEN);
