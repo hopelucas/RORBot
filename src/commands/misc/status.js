@@ -3,6 +3,12 @@ const { Client, IntentsBitField, ActivityType } = require('discord.js');
 
 module.exports = (client) => {
 
-    console.log('Natsuki is online!');
-    client.user.setActivity('my status', { type: 'PLAYING' })
-}
+    console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setPresence({
+        status: "online",  //You can show online, idle....
+        game: {
+            name: "Using !help",  //The message shown
+            type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
+        }
+    })
+};
