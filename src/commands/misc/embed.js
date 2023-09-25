@@ -6,7 +6,7 @@ module.exports = {
       await interaction.deferReply();
 
 
-      let command = '*1d20+2d10-3';
+      let command = '*5d20+2d10-3';
       let total = 0;
       let individualRolls = [];
       let rolls = command.match(/(\d+)d(\d+)/g);
