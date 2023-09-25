@@ -8,6 +8,19 @@ const choices = [
 ]
 
 module.exports = {
+    name: 'rps',
+        description: 'play rock paper scissors with another user',
+        dm_permission: false,
+        options: [
+            {
+                name: 'user',
+                description: "The user you want to play with",
+                type: ApplicationCommandOptionType.User,
+                required: true,
+            }
+        ]
+}
+    
 
     /**
     * @param {object} param0
@@ -121,23 +134,5 @@ module.exports = {
           console.log(`Error with /rps`);
           console.error(error);
         }
-
-    },
-
-
-
-
-    data: {
-        name: 'rps',
-        description: 'play rock paper scissors with another user',
-        dm_permission: false,
-        options: [
-            {
-                name: 'user',
-                description: "The user you want to play with",
-                type: ApplicationCommandOptionType.User,
-                required: true,
-            }
-        ]
+    
     }
-}
