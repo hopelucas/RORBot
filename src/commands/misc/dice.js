@@ -3,7 +3,7 @@ module.exports = {
   description: 'Roll\'s a die', 
   args: true, 
   usage: ['<die-size>', '<number-of-rolls>d<die-size>'], 
-  aliases: ['rol', 'nat20'], authorizedChannels:['general'], 
+  aliases: ['rol', 'nat20'],
    execute(message, args) { 
      let arg = args[0]; 
      let modifier = 0; 
