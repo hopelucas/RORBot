@@ -12,6 +12,7 @@
     "dependencies": {
         "commandkit": "^0.0.8",
         "discord.js": "^14.11.0",
+        "discordjs-button-pagination": "^1.0.7",
         "dotenv": "^16.3.1"
     }
 }

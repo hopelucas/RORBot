@@ -2,13 +2,15 @@ require('dotenv').config();
 const {REST, Routes, ApplicationCommandOptionType, EmbedBuilder} = require('discord.js')
 
 module.exports = {
-  name: 'dice',
-  description: 'Rolls a dice!',
-  options: [
-      {
-      name: 'dice-sides',
-      description: `The number of sides on your dice.`,
-      type: ApplicationCommandOptionType.Number,
+  
+  data: {
+    name: "dice",
+    description: "Rolls a dice!",
+    options: [
+         {
+        name: 'dice-sides',
+       description: `The number of sides on your dice.`,
+       type: ApplicationCommandOptionType.Number,
       required: true,
       },
       {
@@ -24,8 +26,9 @@ module.exports = {
           required: false,
       },
   ],
+},
 
-    callback: async (client, interaction) => {
+    run: async (client, interaction) => {
       await interaction.deferReply();
 
       const num1 = interaction.options.get('dice-sides').value;
@@ -64,8 +67,7 @@ module.exports = {
         Individual rolls: ${individualRolls}
         Modifier: ${modifier?.[0]}`)
         .setColor('Random')
-
-      interaction.editReply({embeds: [embed]});
-
+        
+        interaction.editReply({embeds: [embed]});
     },
   };
