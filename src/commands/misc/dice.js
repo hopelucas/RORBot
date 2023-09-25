@@ -39,17 +39,6 @@ module.exports = {
         .setTitle(`Result: ${rating}!`)
         .setDescription(`You roll some dice.`)
         .setColor('Random')
-        .addFields({
-            name: `Sides:`,
-            inline: true,
-        }, {
-            name: `Number of Dice:`,
-            value: num3,
-            inline: true,
-        }, {
-            name: `Modifiers:`,
-            inline: true,
-        },)
 
       interaction.editReply({embeds: [embed]});
 
