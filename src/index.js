@@ -119,7 +119,7 @@ client.on("ready", () => {
 
     let random = Math.floor(Math.random() * status.length);
     client.user.setActivity(status[random]);
-  }, 10000);
+  }, 100000);
 
  });
 
