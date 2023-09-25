@@ -17,10 +17,14 @@ const client = new Client({
 eventHandler(client);
 
 client.on("ready", () => {
+
   setInterval(() => {
-    
+    let random = Math.floor(Math.random() * status.length);
+    client.user.Activity(status[random]);
+  },10000);
+
   
-  client.user.setActivity({
+  let status = [{
     name: 'Sebastian eat sandwiches',
     type: ActivityType.Watching,
   },
@@ -115,8 +119,7 @@ client.on("ready", () => {
     {
     name: 'Anne wonder why shes in this family',
     type: ActivityType.Watching,
-  },)
- }, 10000);
-});
+    }]
+ });
 
 client.login(process.env.TOKEN);
