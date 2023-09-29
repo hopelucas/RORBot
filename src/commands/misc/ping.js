@@ -1,20 +1,11 @@
-const {
-    ButtonStyle,
-    EmbedBuilder,
-    ButtonBuilder,
-    ActionRowBuilder,
-    ChatInputCommandInteraction,
-    ApplicationCommandOptionType,
-} = require('discord.js');require('dotenv/config');
-const { Client, IntentsBitField, ActivityType } = require('discord.js');
+const { SlashCommandBuilder } = require('discord.js');
 
-const data = {
-    name: 'ping',
-    description: 'Pong!',
+module.exports = {
+  data: new SlashCommandBuilder()
+          .setName('ping')
+          .setDescription('Pong!'),
+          
+  run: ({ interaction, client, handler }) => {
+    interaction.reply(`Pong! ${client.ws.ping}ms`);
+  },
 };
-
-function run({ interaction, client }) {
-    interaction.reply(`:ping_pong: Pong! ${client.ws.ping}ms`);
-}
-
-module.exports = { data, run };
