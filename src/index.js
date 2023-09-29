@@ -3,6 +3,7 @@ const { Client, IntentsBitField, ActivityType } = require('discord.js');
 const { CommandHandler } = require('djs-commander');
 const { CommandKit } = require('commandkit');
 const eventHandler = require('./handlers/eventHandler');
+const path = require('path');
 
 const client = new Client({
     intents: [
