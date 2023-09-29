@@ -121,10 +121,11 @@ let status = [
     }, 10000);
   });
 
-new CommandKit({
-    client,
-    commandsPath: `${__dirname}/commands`,
-    eventsPath: `${__dirname}/events`,
-});
+  
+  new CommandHandler({
+    client, // Discord.js client object | Required by default
+    commandsPath: path.join(__dirname, 'commands'), // Your commands directory
+    eventsPath: path.join(__dirname, 'events'), // Your events directory
+  });
 
 client.login(process.env.TOKEN);
