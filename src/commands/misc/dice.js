@@ -2,31 +2,6 @@ require('dotenv').config();
 const {REST, Routes, ApplicationCommandOptionType, EmbedBuilder} = require('discord.js')
 
 module.exports = {
-  
-  data: {
-    name: "dice",
-    description: "Rolls a dice!",
-    options: [
-      {
-        name: 'dice-sides',
-        description: `The number of sides on your dice.`,
-         type: ApplicationCommandOptionType.Number,
-        required: true,
-        },
-      {
-        name: 'dice-modifiers',
-        description: `Add a modifier?`,
-        type: ApplicationCommandOptionType.Number,
-        required: false,
-      },
-      {
-        name: 'dice-numberof',
-        description: `How many dice should be rolled?`,
-        type: ApplicationCommandOptionType.Number,
-        required: false,
-      },
-    ],
-},
 
 
     run: async ({ interaction }) => {
@@ -70,5 +45,29 @@ module.exports = {
         .setColor('Random')
         
         interaction.editReply({embeds: [embed]});
-}
+  },
+  data: {
+  name: 'dice',
+  description: 'Rolls a dice!',
+  options: [
+    {
+      name: 'dice-sides',
+      description: `The number of sides on your dice.`,
+       type: ApplicationCommandOptionType.Number,
+      required: true,
+      },
+    {
+      name: 'dice-modifiers',
+      description: `Add a modifier?`,
+      type: ApplicationCommandOptionType.Number,
+      required: false,
+    },
+    {
+      name: 'dice-numberof',
+      description: `How many dice should be rolled?`,
+      type: ApplicationCommandOptionType.Number,
+      required: false,
+    },
+  ],
+},
 };
