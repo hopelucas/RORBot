@@ -1,3 +1,3 @@
-module.exports = (argument, client, handler) => {
+module.exports = (client) => {
   console.log(`${client.user.tag} is online.`);
 };
