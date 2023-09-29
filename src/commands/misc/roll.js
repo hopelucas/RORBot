@@ -1,16 +1,32 @@
 require('dotenv').config();
-const {REST, Routes, ApplicationCommandOptionType, EmbedBuilder} = require('discord.js')
+const { REST, Routes } = require('discord.js');
 
 module.exports = {
-
-    name: 'roll',
-    description: 'Replies with a roll!',
-    callback: async (client, interaction) => {
-        await interaction.deferReply();
-
-        const reply = await interaction.fetchReply();
-
-        interaction.editReply('Pong!')
-
+    name: 'rand',
+    description: "generates a random number",
+    execute(message, args, Discord) {
+  
+      if (!args.length || !args[1]) {
+        message.channel.send("You need to type in the min and max values like this \`!rand 10 5\`")
+      }
+  
+      else {
+  
+        let max = args[0]
+        let min = args[1]
+  
+      let randNo = Math.round(Math.random() * max + min)
+  
+      const embed = new Discord.MessageEmbed()
+      .setTitle("Your random number is: ")
+      .setDescription(randNo)
+      .setColor("YELLOW")
+      .setFooter("Random Number Generator")
+      .setTimestamp()
+  
+      message.reply(embed)
+  
+      }
+  
     }
-};
+  }
